@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Coffee Shop Menu</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f4f4f4;
+      margin: 0;
+      padding: 20px;
+    }
+    h1 {
+      text-align: center;
+      color: #333;
+    }
+    .menu {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
+      justify-content: center;
+    }
+    .coffee-item {
+      background-color: #fff;
+      border-radius: 8px;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+      padding: 20px;
+      width: 300px;
+      text-align: center;
+    }
+    .coffee-item img {
+      max-width: 100%;
+      border-radius: 8px;
+    }
+    .coffee-item h2 {
+      margin: 10px 0;
+      color: #555;
+    }
+    .coffee-item p {
+      color: #777;
+    }
+    .coffee-item .price {
+      font-weight: bold;
+      color: #333;
+    }
+  </style>
+</head>
+<body>
+  <h1>Welcome to Our Coffee Shop!</h1>
+  <div class="menu">
+    <% coffeeMenu.forEach(coffee => { %>
+      <div class="coffee-item">
+        <img src="<%= coffee.image %>" alt="<%= coffee.name %>">
+        <h2><%= coffee.name %></h2>
+        <p><%= coffee.description %></p>
+        <p class="price"><%= coffee.price %></p>
+      </div>
+    <% }) %>
+  </div>
+</body>
+</html>
